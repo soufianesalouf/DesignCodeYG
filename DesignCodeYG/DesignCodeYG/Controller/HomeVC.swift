@@ -105,7 +105,6 @@ class HomeVC: UIViewController {
         do {
             let data = try Data(contentsOf: url)
             self.chapter = try JSONDecoder().decode(Chapter.self, from: data)
-            print(self.chapter)
         } catch {
             debugPrint(error)
         }

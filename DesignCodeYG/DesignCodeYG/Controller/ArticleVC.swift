@@ -11,6 +11,7 @@ import UIKit
 class ArticleVC: UIViewController {
     
     //Outlets
+    @IBOutlet weak var articleTableView: UITableView!
     @IBOutlet weak var sectionSubTitleLbl: UILabel!
     @IBOutlet weak var sectionTitleLbl: UILabel!
     @IBOutlet weak var sectionItemImage: UIImageView!
@@ -21,6 +22,10 @@ class ArticleVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        articleTableView.delegate = self
+        articleTableView.dataSource = self
+        articleTableView.estimatedRowHeight = 97
+        articleTableView.rowHeight = UITableViewAutomaticDimension
         setupView()
     }
     
@@ -39,4 +44,19 @@ class ArticleVC: UIViewController {
         dismiss(animated: true, completion: nil)
     }
 
+}
+
+extension ArticleVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.section.article.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "ArticleCell", for: indexPath) as?
+            ArticleCell {
+            cell.configureCell(article: self.section.article[indexPath.row])
+            return cell
+        }
+        return UITableViewCell()
+    }
 }
