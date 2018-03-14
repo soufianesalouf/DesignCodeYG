@@ -5,22 +5,22 @@
     [
      {
      "sectionNum":1,
-     "backgroundImage":"Chapter.png",
-     "sectionImage":"iPhoneX.png",
+     "backgroundImage":"background2.png",
+     "sectionImage":"sketch.png",
      "sectionTitle":"Designing for iPhone X.",
      "sectionSubTitle":"Guidelines to designing for iOS 11"
      },
      {
      "sectionNum":2,
-     "backgroundImage":"Chapter.png",
-     "sectionImage":"iPhoneX.png",
+     "backgroundImage":"background3.png",
+     "sectionImage":"sketch.png",
      "sectionTitle":"Designing for iPhone 6.",
      "sectionSubTitle":"Guidelines to designing for iOS 6"
      },
      {
      "sectionNum":3,
-     "backgroundImage":"Chapter.png",
-     "sectionImage":"iPhoneX.png",
+     "backgroundImage":"background4.png",
+     "sectionImage":"sketch.png",
      "sectionTitle":"Designing for iPhone 7.",
      "sectionSubTitle":"Guidelines to designing for iOS 7"
      }
