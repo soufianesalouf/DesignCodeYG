@@ -14,4 +14,5 @@ struct Section: Decodable {
     public private(set) var sectionImage : String!
     public private(set) var sectionTitle : String!
     public private(set) var sectionSubTitle : String!
+    public private(set) var article = [Article]()
 }

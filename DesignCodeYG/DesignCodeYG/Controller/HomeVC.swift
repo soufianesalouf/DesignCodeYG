@@ -78,7 +78,8 @@ class HomeVC: UIViewController {
     
     func importHeaderData(){
         let path = Bundle.main.path(forResource: "Header", ofType: "json")
-        let url = URL(fileURLWithPath: path!)
+        let url
+            = URL(fileURLWithPath: path!)
         do {
             let data = try Data(contentsOf: url)
             self.header = try JSONDecoder().decode(Header.self, from: data)
@@ -104,6 +105,7 @@ class HomeVC: UIViewController {
         do {
             let data = try Data(contentsOf: url)
             self.chapter = try JSONDecoder().decode(Chapter.self, from: data)
+            print(self.chapter)
         } catch {
             debugPrint(error)
         }
@@ -124,5 +126,18 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
         }
         return UICollectionViewCell()
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let section = self.chapter.sections[indexPath.row]
+        performSegue(withIdentifier: "ArticleVC", sender: section)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let articleVC = segue.destination as? ArticleVC {
+            assert(sender as? Section != nil)
+            articleVC.initSection(section: sender as! Section)
+        }
+    }
+    
 }
 

@@ -9,27 +9,34 @@
 import UIKit
 
 class ArticleVC: UIViewController {
+    
+    //Outlets
+    @IBOutlet weak var sectionSubTitleLbl: UILabel!
+    @IBOutlet weak var sectionTitleLbl: UILabel!
+    @IBOutlet weak var sectionItemImage: UIImageView!
+    @IBOutlet weak var backgroundImage: UIImageView!
+    
+    //variable
+    public private(set) var section: Section!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        setupView()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func initSection(section: Section){
+        self.section = section
     }
-    */
+    
+    func setupView(){
+        backgroundImage.image = UIImage(named: section.backgroundImage)
+        sectionTitleLbl.text = section.sectionTitle
+        sectionSubTitleLbl.text = section.sectionSubTitle
+        sectionItemImage.image = UIImage(named: section.sectionImage)
+    }
+    
+    @IBAction func closeBtnWasPressed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
 
 }
