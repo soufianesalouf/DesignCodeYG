@@ -11,7 +11,10 @@ import UIKit
 class ArticleVC: UIViewController {
     
     //Outlets
-    @IBOutlet weak var articleTableView: UITableView!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sectionSubTitleLbl: UILabel!
     @IBOutlet weak var sectionTitleLbl: UILabel!
     @IBOutlet weak var sectionItemImage: UIImageView!
@@ -22,10 +25,13 @@ class ArticleVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        articleTableView.delegate = self
-        articleTableView.dataSource = self
-        articleTableView.estimatedRowHeight = 97
-        articleTableView.rowHeight = UITableViewAutomaticDimension
+        scrollView.delegate = self
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.estimatedRowHeight = 97
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.isUserInteractionEnabled = false
+        scrollView.resignFirstResponder()
         setupView()
     }
     
@@ -46,7 +52,7 @@ class ArticleVC: UIViewController {
 
 }
 
-extension ArticleVC: UITableViewDelegate, UITableViewDataSource {
+extension ArticleVC: UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.section.article.count
     }
@@ -58,5 +64,21 @@ extension ArticleVC: UITableViewDelegate, UITableViewDataSource {
             return cell
         }
         return UITableViewCell()
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.bounds.intersects(self.headerView.bounds) == true {
+            if tableView.contentOffset.y == 0 {
+                tableView.isUserInteractionEnabled = false
+                tableView.resignFirstResponder()
+                
+            } else {
+                tableView.isUserInteractionEnabled = true
+                scrollView.resignFirstResponder()
+            }
+        } else {
+            tableView.isUserInteractionEnabled = true
+            scrollView.resignFirstResponder()
+        }
     }
 }

@@ -18,6 +18,14 @@
       {
       "title":"Metal 2 and Core ML",
       "detail":"The seamless integration of Metal 2 with the A11 Bionic chip lets your apps and games realize entirely new levels of performance and capability. Take advantage of powerful new API features, including imageblocks, tile shading, threadgroup sharing, and more. And with the architecture of the Apple-designed A11 GPU, you’ll find opportunities for advances in rendering, compute, and machine learning techniques."
+      },
+      {
+      "title":"ARKit",
+      "detail":"iPhone X and ARKit enable a revolutionary capability for robust face tracking in augmented reality apps. Using the TrueDepth camera, your app can detect the position, topology, and expression of the user’s face, all with high accuracy and in real time, making it easy to apply live selfie effects or use facial expressions to drive a 3D character."
+      },
+      {
+      "title":"Metal 2 and Core ML",
+      "detail":"The seamless integration of Metal 2 with the A11 Bionic chip lets your apps and games realize entirely new levels of performance and capability. Take advantage of powerful new API features, including imageblocks, tile shading, threadgroup sharing, and more. And with the architecture of the Apple-designed A11 GPU, you’ll find opportunities for advances in rendering, compute, and machine learning techniques."
       }
       ]
      },
