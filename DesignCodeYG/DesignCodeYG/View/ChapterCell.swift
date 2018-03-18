@@ -21,5 +21,6 @@ class ChapterCell: UICollectionViewCell {
         titleLbl.text = section.sectionTitle
         descriptionLbl.text = section.sectionSubTitle
         sectionImage.image = UIImage(named: section.sectionImage)
+        
     }
 }

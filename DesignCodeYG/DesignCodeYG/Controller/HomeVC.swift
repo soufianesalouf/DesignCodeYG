@@ -36,6 +36,7 @@ class HomeVC: UIViewController {
     var header: Header!
     var middleView: MiddleView!
     var chapter: Chapter!
+    var selectedIndexPath: IndexPath!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -128,6 +129,7 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let section = self.chapter.sections[indexPath.row]
+        self.selectedIndexPath = indexPath
         performSegue(withIdentifier: "ArticleVC", sender: section)
     }
     
@@ -138,5 +140,18 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
         }
     }
     
+}
+
+extension HomeVC: ZoomingViewController {
+    func ZoomingBackgroundView(for transition: ZoomTransitioningDelegate) -> UIView? {
+        return nil
+    }
+    func ZoomingImageView(for transition: ZoomTransitioningDelegate) -> UIImageView? {
+        if let indexPath = selectedIndexPath {
+            let cell = chapterCollectionView.cellForItem(at: indexPath) as! ChapterCell
+            return cell.bgImage
+        }
+        return nil
+    }
 }
 

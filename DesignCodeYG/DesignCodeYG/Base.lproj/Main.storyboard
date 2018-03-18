@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14092" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14092" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sFo-so-dU4">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1212"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fxe-am-duD">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1212"/>
+                                        <rect key="frame" x="0.0" y="-45" width="375" height="1212"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cx4-p6-401" userLabel="HeaderView">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="462"/>
@@ -156,7 +156,7 @@
                                                 <rect key="frame" x="0.0" y="462" width="375" height="375"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R44-zr-NfC">
-                                                        <rect key="frame" x="107" y="57.666666666666629" width="160" height="160"/>
+                                                        <rect key="frame" x="107" y="57.666666666666686" width="160" height="160"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="160" id="FOn-dR-PTb"/>
                                                             <constraint firstAttribute="height" constant="160" id="oAa-qc-5RK"/>
@@ -314,7 +314,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="fxe-am-duD" secondAttribute="bottom" id="Mli-7O-kDq"/>
-                                    <constraint firstItem="fxe-am-duD" firstAttribute="top" secondItem="jWd-by-iIA" secondAttribute="top" id="WDH-CB-lZS"/>
+                                    <constraint firstItem="fxe-am-duD" firstAttribute="top" secondItem="jWd-by-iIA" secondAttribute="top" constant="-45" id="WDH-CB-lZS"/>
                                     <constraint firstItem="fxe-am-duD" firstAttribute="leading" secondItem="jWd-by-iIA" secondAttribute="leading" id="XkL-gP-Pt5"/>
                                     <constraint firstAttribute="trailing" secondItem="fxe-am-duD" secondAttribute="trailing" id="hFl-dw-Gqa"/>
                                 </constraints>
@@ -330,7 +330,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="FnG-Qw-9rg"/>
                     <size key="freeformSize" width="375" height="1212"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="chapterCollectionView" destination="D4D-Kc-ZIM" id="Nwm-b5-4Vk"/>
                         <outlet property="chapterNumAndNumberOfSectionsLbl" destination="lDg-Lg-Gcj" id="bGk-De-24T"/>
@@ -351,7 +355,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="24.800000000000001" y="34.729064039408868"/>
+            <point key="canvasLocation" x="967.20000000000005" y="34.729064039408868"/>
         </scene>
         <!--ArticleVC-->
         <scene sceneID="SN5-oE-cqE">
@@ -365,7 +369,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="1187"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8BC-ht-E9J">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1187"/>
+                                        <rect key="frame" x="0.0" y="-45" width="375" height="1187"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DMM-Xb-l6q">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
@@ -397,7 +401,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9DW-AO-qp6">
-                                                        <rect key="frame" x="102.66666666666669" y="132.66666666666666" width="170" height="169.99999999999997"/>
+                                                        <rect key="frame" x="102.66666666666669" y="132.66666666666669" width="170" height="170"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="170" id="KAP-QG-aqR"/>
                                                             <constraint firstAttribute="width" constant="170" id="NNx-Cr-U9M"/>
@@ -478,7 +482,7 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="8BC-ht-E9J" secondAttribute="bottom" id="CdQ-Nf-2bi"/>
                                     <constraint firstItem="8BC-ht-E9J" firstAttribute="leading" secondItem="y4g-9A-CHl" secondAttribute="leading" id="FgI-tu-dZl"/>
-                                    <constraint firstItem="8BC-ht-E9J" firstAttribute="top" secondItem="y4g-9A-CHl" secondAttribute="top" id="U5y-1x-2Wc"/>
+                                    <constraint firstItem="8BC-ht-E9J" firstAttribute="top" secondItem="y4g-9A-CHl" secondAttribute="top" constant="-45" id="U5y-1x-2Wc"/>
                                     <constraint firstAttribute="trailing" secondItem="8BC-ht-E9J" secondAttribute="trailing" id="dXP-QN-aBK"/>
                                 </constraints>
                             </scrollView>
@@ -498,6 +502,9 @@
                         <viewLayoutGuide key="safeArea" id="gZN-H0-FZZ"/>
                     </view>
                     <size key="freeformSize" width="375" height="1187"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="backgroundImage" destination="FzW-d4-BSQ" id="sE4-dB-cPP"/>
                         <outlet property="contentView" destination="8BC-ht-E9J" id="5VN-ez-92m"/>
@@ -511,7 +518,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fpn-4Q-eIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="897" y="26"/>
+            <point key="canvasLocation" x="1839.2" y="25.492610837438423"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ipt-VS-srZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sFo-so-dU4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zTg-nY-KnG">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <outlet property="delegate" destination="cfC-Vd-p7k" id="QDS-ll-ncY"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="aO1-8U-KPh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1xH-BQ-CZN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="cfC-Vd-p7k" customClass="ZoomTransitioningDelegate" customModule="DesignCodeYG" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="34.729064039408868"/>
         </scene>
     </scenes>
 </document>

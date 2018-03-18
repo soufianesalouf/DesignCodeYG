@@ -82,3 +82,15 @@ extension ArticleVC: UITableViewDelegate, UITableViewDataSource, UIScrollViewDel
         }
     }
 }
+
+extension ArticleVC: ZoomingViewController {
+    func ZoomingBackgroundView(for transition: ZoomTransitioningDelegate) -> UIView? {
+        return nil
+    }
+    
+    func ZoomingImageView(for transition: ZoomTransitioningDelegate) -> UIImageView? {
+        return backgroundImage
+    }
+    
+    
+}
