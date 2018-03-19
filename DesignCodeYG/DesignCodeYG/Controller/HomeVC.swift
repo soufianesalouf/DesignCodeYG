@@ -36,6 +36,7 @@ class HomeVC: UIViewController {
     var header: Header!
     var middleView: MiddleView!
     var chapter: Chapter!
+    var selectedIndexPath: IndexPath!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +51,10 @@ class HomeVC: UIViewController {
     }
     
     func setupView(){
+        
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
         
         //Header
         headerBackgroundImage.image = UIImage(named: header.backgroundImage)
@@ -128,15 +133,53 @@ extension HomeVC: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let section = self.chapter.sections[indexPath.row]
+        self.selectedIndexPath = indexPath
         performSegue(withIdentifier: "ArticleVC", sender: section)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let articleVC = segue.destination as? ArticleVC {
+            let barBtn = UIBarButtonItem()
+            barBtn.title = ""
+            navigationItem.backBarButtonItem = barBtn
             assert(sender as? Section != nil)
             articleVC.initSection(section: sender as! Section)
         }
     }
     
+}
+
+extension HomeVC: ZoomingViewController {
+    func ZoomingBackgroundImageView(for transition: ZoomTransitioningDelegate) -> UIImageView? {
+        if let indexPath = selectedIndexPath {
+            let cell = chapterCollectionView.cellForItem(at: indexPath) as! ChapterCell
+            return cell.sectionImage
+        }
+        return nil
+    }
+    
+    func ZoomingTitle(for transition: ZoomTransitioningDelegate) -> UILabel? {
+        if let indexPath = selectedIndexPath {
+            let cell = chapterCollectionView.cellForItem(at: indexPath) as! ChapterCell
+            return cell.titleLbl
+        }
+        return nil
+    }
+    
+    func ZoomingSubTitle(for transition: ZoomTransitioningDelegate) -> UILabel? {
+        if let indexPath = selectedIndexPath {
+            let cell = chapterCollectionView.cellForItem(at: indexPath) as! ChapterCell
+            return cell.descriptionLbl
+        }
+        return nil
+    }
+    
+    func ZoomingImageView(for transition: ZoomTransitioningDelegate) -> UIImageView? {
+        if let indexPath = selectedIndexPath {
+            let cell = chapterCollectionView.cellForItem(at: indexPath) as! ChapterCell
+            return cell.bgImage
+        }
+        return nil
+    }
 }
 

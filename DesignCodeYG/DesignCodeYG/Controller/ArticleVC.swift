@@ -35,19 +35,21 @@ class ArticleVC: UIViewController {
         setupView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.hidesBarsOnSwipe = true
+    }
+    
     func initSection(section: Section){
         self.section = section
     }
     
     func setupView(){
+        self.navigationController?.isNavigationBarHidden = false
         backgroundImage.image = UIImage(named: section.backgroundImage)
         sectionTitleLbl.text = section.sectionTitle
         sectionSubTitleLbl.text = section.sectionSubTitle
         sectionItemImage.image = UIImage(named: section.sectionImage)
-    }
-    
-    @IBAction func closeBtnWasPressed(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
     }
 
 }
@@ -82,3 +84,24 @@ extension ArticleVC: UITableViewDelegate, UITableViewDataSource, UIScrollViewDel
         }
     }
 }
+
+extension ArticleVC: ZoomingViewController {
+    func ZoomingBackgroundImageView(for transition: ZoomTransitioningDelegate) -> UIImageView? {
+        return sectionItemImage
+    }
+    
+    func ZoomingTitle(for transition: ZoomTransitioningDelegate) -> UILabel? {
+        return sectionTitleLbl
+    }
+    
+    func ZoomingSubTitle(for transition: ZoomTransitioningDelegate) -> UILabel? {
+        return sectionSubTitleLbl
+    }
+    
+    func ZoomingImageView(for transition: ZoomTransitioningDelegate) -> UIImageView? {
+        return backgroundImage
+    }
+    
+    
+}
+
