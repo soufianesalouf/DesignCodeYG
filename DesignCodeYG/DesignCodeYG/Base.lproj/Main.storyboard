@@ -15,14 +15,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="HomeVC" customModule="DesignCodeYG" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1212"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1262"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWd-by-iIA">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="1212"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="1262"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fxe-am-duD">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1212"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1262"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cx4-p6-401" userLabel="HeaderView">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="462"/>
@@ -296,15 +296,44 @@
                                                     <constraint firstItem="lDg-Lg-Gcj" firstAttribute="leading" secondItem="6iO-D9-zde" secondAttribute="leading" constant="8" id="wiq-sd-xZm"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sxf-Nq-eMK" userLabel="QuizView">
+                                                <rect key="frame" x="0.0" y="1212" width="375" height="50"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bil-qS-2zT">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                                        <color key="backgroundColor" red="0.56078431370000004" green="0.81176470590000005" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="u2z-8N-obX"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="25"/>
+                                                        <state key="normal" title="Start Quiz">
+                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="startQuizBtnWasPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j9f-qK-Vak"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="Bil-qS-2zT" secondAttribute="trailing" id="IhZ-Kb-Chm"/>
+                                                    <constraint firstItem="Bil-qS-2zT" firstAttribute="leading" secondItem="sxf-Nq-eMK" secondAttribute="leading" id="dl7-uS-3mG"/>
+                                                    <constraint firstAttribute="bottom" secondItem="Bil-qS-2zT" secondAttribute="bottom" id="gox-XE-c56"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="6iO-D9-zde" firstAttribute="leading" secondItem="fxe-am-duD" secondAttribute="leading" id="7wq-v1-1Ud"/>
                                             <constraint firstAttribute="trailing" secondItem="6iO-D9-zde" secondAttribute="trailing" id="8Ns-rS-97H"/>
-                                            <constraint firstAttribute="height" constant="1212" id="FHK-wc-hoR"/>
+                                            <constraint firstAttribute="bottom" secondItem="sxf-Nq-eMK" secondAttribute="bottom" id="8XJ-ll-v8U"/>
+                                            <constraint firstItem="sxf-Nq-eMK" firstAttribute="top" secondItem="6iO-D9-zde" secondAttribute="bottom" id="Btd-be-CeX"/>
+                                            <constraint firstAttribute="height" constant="1262" id="FHK-wc-hoR"/>
                                             <constraint firstItem="7pz-lh-h4M" firstAttribute="leading" secondItem="fxe-am-duD" secondAttribute="leading" id="IaT-1y-tFR"/>
                                             <constraint firstItem="Cx4-p6-401" firstAttribute="top" secondItem="fxe-am-duD" secondAttribute="top" id="MhM-vX-Z49"/>
                                             <constraint firstItem="Cx4-p6-401" firstAttribute="leading" secondItem="fxe-am-duD" secondAttribute="leading" id="hER-T0-rCj"/>
+                                            <constraint firstAttribute="trailing" secondItem="sxf-Nq-eMK" secondAttribute="trailing" id="ihL-e8-D4G"/>
+                                            <constraint firstItem="sxf-Nq-eMK" firstAttribute="leading" secondItem="fxe-am-duD" secondAttribute="leading" id="p4a-QJ-PbK"/>
                                             <constraint firstAttribute="trailing" secondItem="Cx4-p6-401" secondAttribute="trailing" id="qIK-Fr-pwK"/>
                                             <constraint firstItem="7pz-lh-h4M" firstAttribute="top" secondItem="Cx4-p6-401" secondAttribute="bottom" id="wG0-eY-t05"/>
                                             <constraint firstAttribute="trailing" secondItem="7pz-lh-h4M" secondAttribute="trailing" id="x7h-aI-sBf"/>
@@ -330,7 +359,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <size key="freeformSize" width="375" height="1212"/>
+                    <size key="freeformSize" width="375" height="1262"/>
                     <connections>
                         <outlet property="chapterCollectionView" destination="D4D-Kc-ZIM" id="Nwm-b5-4Vk"/>
                         <outlet property="chapterNumAndNumberOfSectionsLbl" destination="lDg-Lg-Gcj" id="bGk-De-24T"/>
@@ -347,6 +376,7 @@
                         <outlet property="secondStackTitle" destination="rRe-sQ-mK4" id="DyT-bD-wdh"/>
                         <outlet property="subTitleLbl" destination="yKU-ZI-8oe" id="jSK-oT-dKS"/>
                         <segue destination="BNZ-vs-olk" kind="show" identifier="ArticleVC" id="b1e-n1-aGX"/>
+                        <segue destination="exF-HG-H9N" kind="show" identifier="QuizVC" id="CvO-aq-asB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -524,7 +554,6 @@
                         <outlet property="sectionSubTitleLbl" destination="uRc-sG-Zlq" id="mpj-RT-XfZ"/>
                         <outlet property="sectionTitleLbl" destination="S57-Jv-rJu" id="qUb-AD-NWP"/>
                         <outlet property="tableView" destination="FHY-5j-Sv2" id="mSj-Za-Vcx"/>
-                        <segue destination="exF-HG-H9N" kind="show" identifier="QuizVC" id="8cr-Eq-AHe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fpn-4Q-eIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -613,10 +642,10 @@
                                                 <subviews>
                                                     <button opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hLI-Xp-t6G">
                                                         <rect key="frame" x="0.0" y="0.0" width="345" height="71"/>
-                                                        <color key="backgroundColor" red="0.56078431370000004" green="0.81176470590000005" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                                         <state key="normal" title="A. Trinidad and Tobago">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="answerPressed:" destination="exF-HG-H9N" eventType="touchUpInside" id="U5Y-TS-gQ2"/>
@@ -624,10 +653,10 @@
                                                     </button>
                                                     <button opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ST-qj-7OT">
                                                         <rect key="frame" x="0.0" y="80.999999999999943" width="345" height="71.333333333333314"/>
-                                                        <color key="backgroundColor" red="0.56078431370000004" green="0.81176470590000005" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                                         <state key="normal" title="B. Antigua and Barbuda">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="answerPressed:" destination="exF-HG-H9N" eventType="touchUpInside" id="m0S-LZ-gmC"/>
@@ -635,10 +664,10 @@
                                                     </button>
                                                     <button opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZc-OH-kqc">
                                                         <rect key="frame" x="0.0" y="162.33333333333331" width="345" height="71"/>
-                                                        <color key="backgroundColor" red="0.56078431370000004" green="0.81176470590000005" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                                         <state key="normal" title="C. Saint Kits and Nevis">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="answerPressed:" destination="exF-HG-H9N" eventType="touchUpInside" id="F0y-WC-tJj"/>
@@ -646,10 +675,10 @@
                                                     </button>
                                                     <button opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7CZ-6d-fms">
                                                         <rect key="frame" x="0.0" y="243.33333333333331" width="345" height="71"/>
-                                                        <color key="backgroundColor" red="0.56078431370000004" green="0.81176470590000005" blue="0.30588235289999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                                         <state key="normal" title="D. Barbadus">
-                                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         </state>
                                                         <connections>
                                                             <action selector="answerPressed:" destination="exF-HG-H9N" eventType="touchUpInside" id="pHp-Vn-y4J"/>
@@ -695,7 +724,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PhD-cF-zaP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1868" y="-112.3152709359606"/>
+            <point key="canvasLocation" x="26" y="969"/>
         </scene>
     </scenes>
     <resources>

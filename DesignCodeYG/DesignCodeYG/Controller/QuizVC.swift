@@ -36,10 +36,11 @@ class QuizVC: UIViewController {
     
     @IBAction func answerPressed(_ sender: UIButton) {
         if sender.tag == selectedAnswer {
+            sender.backgroundColor = UIColor.green
             ProgressHUD.showSuccess("Correct")
             score += 1
-            
         }else{
+            sender.backgroundColor = UIColor.red
             ProgressHUD.showError("Incorrect")
         }
         questionNumber += 1
@@ -55,13 +56,27 @@ class QuizVC: UIViewController {
             optionCBtn.setTitle(questionBank.questions[questionNumber].optionC, for: UIControlState.normal)
             optionDBtn.setTitle(questionBank.questions[questionNumber].optionD, for: UIControlState.normal)
             selectedAnswer = questionBank.questions[questionNumber].correctAnswer
+            resetBackgroundColor()
             updateHeader()
         }else {
             let alert = UIAlertController(title: "Awesome", message: "End of Quiz. Do you want to start over?", preferredStyle: .alert)
             let restartAction = UIAlertAction(title: "Restart", style: .default, handler: {action in self.restartQuiz()})
+            let noAction = UIAlertAction(title: "No", style: .destructive, handler: {action in self.dismissToHome()})
             alert.addAction(restartAction)
+            alert.addAction(noAction)
             present(alert, animated: true, completion: nil)
         }
+    }
+    
+    func dismissToHome(){
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func resetBackgroundColor(){
+        optionABtn.backgroundColor = UIColor.lightGray
+        optionBBtn.backgroundColor = UIColor.lightGray
+        optionCBtn.backgroundColor = UIColor.lightGray
+        optionDBtn.backgroundColor = UIColor.lightGray
     }
     
     func updateHeader(){

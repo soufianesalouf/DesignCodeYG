@@ -109,6 +109,11 @@ class HomeVC: UIViewController {
             debugPrint(error)
         }
     }
+    
+    @IBAction func startQuizBtnWasPressed(_ sender: Any) {
+        performSegue(withIdentifier: "QuizVC", sender: nil)
+    }
+    
 }
 
 

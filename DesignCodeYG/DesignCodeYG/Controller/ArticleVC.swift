@@ -47,7 +47,7 @@ class ArticleVC: UIViewController {
     }
     
     @IBAction func QuizBtnWasPessed(_ sender: Any) {
-        performSegue(withIdentifier: "QuizVC", sender: nil)
+//        performSegue(withIdentifier: "QuizVC", sender: nil)
     }
     
     @IBAction func closeBtnWasPressed(_ sender: Any) {
