@@ -46,6 +46,10 @@ class ArticleVC: UIViewController {
         sectionItemImage.image = UIImage(named: section.sectionImage)
     }
     
+    @IBAction func QuizBtnWasPessed(_ sender: Any) {
+        performSegue(withIdentifier: "QuizVC", sender: nil)
+    }
+    
     @IBAction func closeBtnWasPressed(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
