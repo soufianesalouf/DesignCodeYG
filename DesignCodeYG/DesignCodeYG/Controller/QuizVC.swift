@@ -101,5 +101,9 @@ class QuizVC: UIViewController {
             debugPrint(error)
         }
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
 }

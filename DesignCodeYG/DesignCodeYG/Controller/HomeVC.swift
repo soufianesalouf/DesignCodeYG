@@ -114,6 +114,10 @@ class HomeVC: UIViewController {
         performSegue(withIdentifier: "QuizVC", sender: nil)
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
 }
 
 
